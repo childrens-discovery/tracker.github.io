@@ -284,19 +284,18 @@
 <div class="hero">
   <div class="wrap hero__grid">
     <div class="hero__text">
-      <p class="eyebrow">Live tracker &middot; updated as things move, not on a schedule</p>
+      <p class="eyebrow">Live tracker</p>
       <h1>Where your 75 houses are <em>at</em></h1>
       <p class="hero__lede">
         Printing, parts, electronics, assembly, firmware, the guide, the games. All of it, in one place.
         Click into any stage for detail. A couple of things near the bottom need your call.
       </p>
-      <p class="hero__meta">Last touched 1 September 2026</p>
       <div class="stats">
         <div class="stat is-track"><b class="tabular">50<span style="font-size:15px;color:var(--ink-faint)">/75</span></b><span>Houses printed</span></div>
         <div class="stat is-ready"><b>Ready</b><span>Firmware update</span></div>
         <div class="stat is-track"><b class="tabular">90%</b><span>Quick Start Guide</span></div>
-        <div class="stat is-track"><b class="tabular">5<span style="font-size:15px;color:var(--ink-faint)">/8</span></b><span>Mini-games live</span></div>
-        <div class="stat is-track"><b class="tabular" id="statDays">&nbsp;</b><span>Estimated days to full fleet tested</span></div>
+        <div class="stat is-track"><b class="tabular">6<span style="font-size:15px;color:var(--ink-faint)">/8</span></b><span>Mini-games live</span></div>
+        <div class="stat is-track"><b class="tabular" id="statDays">&nbsp;</b><span>Estimated business days to full fleet tested</span></div>
       </div>
     </div>
     <figure class="hero__media">
@@ -373,7 +372,7 @@
       </button>
       <div class="stage__body">
         <div class="stage__body-in">
-          <p>50/75 houses printed by end of week (4 Sept).</p>
+          <p>50 of 75 houses printed. Printing is ongoing.</p>
           <div class="bar" role="img" aria-label="50 of 75 houses printed"><i style="width:66.7%"></i></div>
           <p class="bar-label"><span class="tabular">50 / 75</span> printed</p>
         </div>
@@ -392,7 +391,7 @@
           <div class="sub">
             <div class="sub__row ready"><i></i><div><b>LCD touchscreens</b><span>In hand, all 75.</span></div></div>
             <div class="sub__row ready"><i></i><div><b>Solar panels</b><span>In hand, all 75.</span></div></div>
-            <div class="sub__row track"><i></i><div><b>Wiring looms</b><span>Just waiting on extra cables, estimated 11 September.</span></div></div>
+            <div class="sub__row track"><i></i><div><b>Wiring looms</b><span>40/75 completed. Waiting on extra cables, estimated 11 September.</span></div></div>
           </div>
         </div>
       </div>
@@ -469,10 +468,10 @@
       </button>
       <div class="stage__body">
         <div class="stage__body-in">
-          <p>Five games are live in the preview build. Have a poke around. We're building toward 8 for launch, 10 if time allows.</p>
+          <p>Six games are live in the preview build. Have a poke around. We're building toward 8 for launch, 10 if time allows.</p>
           <p>Full platform goes live <b>mid-October</b>. Accessible from a URL. No app, no login for the kids.</p>
           <div class="stat-chips">
-            <div class="stat-chip"><b>5</b>live now</div>
+            <div class="stat-chip"><b>6</b>live now</div>
             <div class="stat-chip"><b>8</b>target</div>
             <div class="stat-chip"><b>10</b>stretch</div>
           </div>
@@ -530,7 +529,7 @@
       </a>
       <a class="res" href="https://glowhouse-cd.netlify.app/" target="_blank" rel="noopener">
         <span class="res__icon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 9h16" stroke="currentColor" stroke-width="1.8"/></svg></span>
-        <span class="res__text"><b>Mini-games preview</b><span>Live build, five games in so far</span></span>
+        <span class="res__text"><b>Mini-games preview</b><span>Live build, six games in so far</span></span>
         <span class="res__go">Open &rarr;</span>
       </a>
     </div>
@@ -550,7 +549,7 @@
 
 <footer>
   <div class="wrap">
-    <span>GLOW House &middot; a Children&rsquo;s Discovery &times; SEC build &middot; last updated 1 Sept 2026</span>
+    <span>GLOW House &middot; a Children&rsquo;s Discovery &times; SEC build &middot; last updated 8 Sept 2026</span>
   </div>
 </footer>
 
@@ -597,16 +596,19 @@
 
 // ---- Live day count to the "full fleet tested" milestone ----
   try {
-    var target = new Date('2026-09-21T00:00:00');
+    var target = new Date('2026-09-22T00:00:00');
     var now = new Date();
-    var msPerDay = 1000 * 60 * 60 * 24;
-    var days = Math.ceil((target - now) / msPerDay);
-    var el = document.getElementById('statDays');
-    if(el){
-      if(days > 0){ el.textContent = days; }
-      else if(days === 0){ el.textContent = '0'; }
-      else { el.textContent = '✓'; }
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    // Count weekdays remaining, from tomorrow through the target day inclusive.
+    var days = 0;
+    var cursor = new Date(today);
+    while(cursor < target){
+      cursor.setDate(cursor.getDate() + 1);
+      var dow = cursor.getDay();
+      if(dow !== 0 && dow !== 6){ days++; }
     }
+    var el = document.getElementById('statDays');
+    if(el){ el.textContent = (target <= today) ? '✓' : days; }
   } catch(e) {}
 
   // ---- Gantt timeline: data-driven so dates are easy to update later ----
@@ -621,8 +623,8 @@
   }
 
   var TIMELINE = [
-    { id: 'row-print',  label: '3D Printing',        start: '2026-08-24', end: '2026-09-04', status: 'track' },
-    { id: 'row-source', label: 'Component Sourcing', start: '2026-08-24', end: '2026-09-10', status: 'track' },
+    { id: 'row-print',  label: '3D Printing',        start: '2026-08-24', end: '2026-09-11', status: 'track' },
+    { id: 'row-source', label: 'Component Sourcing', start: '2026-08-24', end: '2026-09-11', status: 'track' },
     { id: 'row-elec',   label: 'Electronics',        start: '2026-09-01', end: '2026-09-17', status: 'track' },
     { id: 'row-asm',    label: 'Assembly & Testing', start: '2026-09-13', end: '2026-09-24', status: 'soon'  },
     { id: 'row-fw',     label: 'Firmware update',    start: '2026-08-24', end: '2026-09-12', status: 'ready' },
