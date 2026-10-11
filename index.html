@@ -292,7 +292,8 @@
       </p>
       <div class="stats">
         <div class="stat is-ready"><b class="tabular">75<span style="font-size:15px;color:var(--ink-faint)">/75</span></b><span>Houses printed</span></div>
-        <div class="stat is-track"><b class="tabular">30<span style="font-size:15px;color:var(--ink-faint)">/75</span></b><span>Houses assembled</span></div>
+        <div class="stat is-track"><b class="tabular">68<span style="font-size:15px;color:var(--ink-faint)">/75</span></b><span>Houses assembled</span></div>
+        <div class="stat is-track"><b class="tabular">34<span style="font-size:15px;color:var(--ink-faint)">/75</span></b><span>Houses shipped</span></div>
         <div class="stat is-ready"><b>Ready</b><span>Firmware update</span></div>
         <div class="stat is-track"><b class="tabular">90%</b><span>Quick Start Guide</span></div>
         <div class="stat is-track"><b class="tabular">6<span style="font-size:15px;color:var(--ink-faint)">/8</span></b><span>Mini-games live</span></div>
@@ -421,11 +422,11 @@
       </button>
       <div class="stage__body">
         <div class="stage__body-in">
-          <p>Every component is in hand and assembly is in full swing. <b>30 of 75</b> houses are assembled and tested so far.</p>
-          <div class="bar" role="img" aria-label="30 of 75 houses assembled"><i style="width:40%"></i></div>
-          <p class="bar-label"><span class="tabular">30 / 75</span> assembled</p>
+          <p>Assembly is nearly through the fleet. <b>68 of 75</b> houses are assembled and tested, with 7 to go.</p>
+          <div class="bar" role="img" aria-label="68 of 75 houses assembled and tested"><i style="width:90.7%"></i></div>
+          <p class="bar-label"><span class="tabular">68 / 75</span> assembled &amp; tested</p>
           <p>Once built and tested, houses are ready to leave our office within <b>5 business days</b>.</p>
-          <div class="milestone">Full fleet tested estimate &nbsp;<b class="tabular">w/c 5 Oct</b></div>
+          <div class="milestone">Full fleet tested estimate &nbsp;<b class="tabular">w/c 12 Oct</b></div>
         </div>
       </div>
     </article>
@@ -491,7 +492,7 @@
   <div class="wrap">
     <p class="eyebrow">Shipping tracker</p>
     <h2>75 houses, two destinations</h2>
-    <p class="lede">Nothing's shipped yet. These fill in as boxes go out the door.</p>
+    <p class="lede">The Morwell run has gone out. The Melbourne run is still to come.</p>
 
     <div class="ship__grid">
       <div class="ship__card">
@@ -502,9 +503,9 @@
       </div>
       <div class="ship__card">
         <div class="ship__route"><span>Sydney</span><span class="ship__track"></span><span>Morwell, VIC</span></div>
-        <h3>Tienery</h3>
-        <div class="ship__bar" role="img" aria-label="0 of 34 houses shipped to Tienery"><i style="width:0%"></i></div>
-        <p class="ship__bar-label"><span class="tabular">0 / 34</span> shipped</p>
+        <h3>Tierney</h3>
+        <div class="ship__bar" role="img" aria-label="34 of 34 houses shipped to Tierney"><i style="width:100%;background:var(--mint-deep)"></i></div>
+        <p class="ship__bar-label"><span class="tabular">34 / 34</span> shipped</p>
       </div>
     </div>
   </div>
@@ -553,7 +554,7 @@
 
 <footer>
   <div class="wrap">
-    <span>GLOW House &middot; a Children&rsquo;s Discovery &times; SEC build &middot; last updated 24 Sept 2026</span>
+    <span>GLOW House &middot; a Children&rsquo;s Discovery &times; SEC build &middot; last updated 12 Oct 2026</span>
   </div>
 </footer>
 
@@ -600,7 +601,7 @@
 
 // ---- Live day count to the "full fleet tested" milestone ----
   try {
-    var target = new Date('2026-10-07T00:00:00');
+    var target = new Date('2026-10-16T00:00:00');
     var now = new Date();
     var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     // Count weekdays remaining, from tomorrow through the target day inclusive.
@@ -630,7 +631,7 @@
     { id: 'row-print',  label: '3D Printing',        start: '2026-08-24', end: '2026-09-11', status: 'ready' },
     { id: 'row-source', label: 'Component Sourcing', start: '2026-08-24', end: '2026-09-11', status: 'ready' },
     { id: 'row-elec',   label: 'Electronics',        start: '2026-09-01', end: '2026-09-17', status: 'ready' },
-    { id: 'row-asm',    label: 'Assembly & Testing', start: '2026-09-13', end: '2026-10-07', status: 'track' },
+    { id: 'row-asm',    label: 'Assembly & Testing', start: '2026-09-13', end: '2026-10-16', status: 'track' },
     { id: 'row-fw',     label: 'Firmware update',    start: '2026-08-24', end: '2026-09-12', status: 'ready' },
     { id: 'row-guide',  label: 'Quick Start Guide',  start: '2026-08-24', end: '2026-09-20', status: 'track' },
     { id: 'row-games',  label: 'Mini Games',         start: '2026-08-24', end: '2026-10-15', status: 'track' },
