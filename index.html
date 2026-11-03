@@ -288,16 +288,16 @@
       <h1>Where your 75 houses are <em>at</em></h1>
       <p class="hero__lede">
         Printing, parts, electronics, assembly, firmware, the guide, the games. All of it, in one place.
-        Click into any stage for detail. A couple of things near the bottom need your call.
+        Click into any stage for detail.
       </p>
       <div class="stats">
         <div class="stat is-ready"><b class="tabular">75<span style="font-size:15px;color:var(--ink-faint)">/75</span></b><span>Houses printed</span></div>
-        <div class="stat is-track"><b class="tabular">68<span style="font-size:15px;color:var(--ink-faint)">/75</span></b><span>Houses assembled</span></div>
-        <div class="stat is-track"><b class="tabular">34<span style="font-size:15px;color:var(--ink-faint)">/75</span></b><span>Houses shipped</span></div>
+        <div class="stat is-ready"><b class="tabular">75<span style="font-size:15px;color:var(--ink-faint)">/75</span></b><span>Houses assembled</span></div>
+        <div class="stat is-ready"><b class="tabular">75<span style="font-size:15px;color:var(--ink-faint)">/75</span></b><span>Houses shipped</span></div>
         <div class="stat is-ready"><b>Ready</b><span>Firmware update</span></div>
-        <div class="stat is-track"><b class="tabular">90%</b><span>Quick Start Guide</span></div>
+        <div class="stat is-ready"><b class="tabular">100%</b><span>Quick Start Guide</span></div>
         <div class="stat is-track"><b class="tabular">6<span style="font-size:15px;color:var(--ink-faint)">/8</span></b><span>Mini-games live</span></div>
-        <div class="stat is-track"><b class="tabular" id="statDays">&nbsp;</b><span>Estimated business days to full fleet tested</span></div>
+        <div class="stat is-ready"><b>Delivered</b><span>All 75 houses</span></div>
       </div>
     </div>
     <figure class="hero__media">
@@ -332,11 +332,11 @@
       <button class="rail__pill" data-status="ready" data-target="stage-print"><span class="rail__dot"></span>3D Printing</button>
       <button class="rail__pill" data-status="ready" data-target="stage-source"><span class="rail__dot"></span>Component Sourcing</button>
       <button class="rail__pill" data-status="ready" data-target="stage-electronics"><span class="rail__dot"></span>Electronics</button>
-      <button class="rail__pill" data-status="track" data-target="stage-assembly"><span class="rail__dot"></span>Assembly &amp; Testing</button>
+      <button class="rail__pill" data-status="ready" data-target="stage-assembly"><span class="rail__dot"></span>Assembly &amp; Testing</button>
       <button class="rail__pill" data-status="ready" data-target="stage-firmware"><span class="rail__dot"></span>Firmware update</button>
-      <button class="rail__pill" data-status="track" data-target="stage-guide"><span class="rail__dot"></span>Quick Start Guide</button>
+      <button class="rail__pill" data-status="ready" data-target="stage-guide"><span class="rail__dot"></span>Quick Start Guide</button>
       <button class="rail__pill" data-status="track" data-target="stage-games"><span class="rail__dot"></span>Mini Games</button>
-      <button class="rail__pill" data-status="track" data-target="shipSection"><span class="rail__dot"></span>Shipping tracker</button>
+      <button class="rail__pill" data-status="ready" data-target="shipSection"><span class="rail__dot"></span>Shipping tracker</button>
     </div>
   </div>
 </section>
@@ -345,7 +345,7 @@
   <div class="wrap">
     <p class="eyebrow">The full timeline</p>
     <h2 style="font-size:clamp(22px,2.6vw,30px)">Every stage, on a calendar</h2>
-    <p>Shipping bar updates once you pick a plan below.</p>
+    <p>All 75 houses are assembled, shipped and delivered. Mini games are still rolling out.</p>
     <div class="gantt">
       <div class="gantt__inner">
         <div class="gantt__axis" id="ganttAxis"></div>
@@ -417,16 +417,14 @@
       <button class="stage__head" aria-expanded="false">
         <span class="stage__num tabular">04</span>
         <span class="stage__title"><h3>Assembly &amp; Testing</h3><p>Every house built, wired and powered on</p></span>
-        <span class="pill track">In progress</span>
+        <span class="pill ready">Done</span>
         <svg class="stage__chev" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="stage__body">
         <div class="stage__body-in">
-          <p>Assembly is nearly through the fleet. <b>68 of 75</b> houses are assembled and tested, with 7 to go.</p>
-          <div class="bar" role="img" aria-label="68 of 75 houses assembled and tested"><i style="width:90.7%"></i></div>
-          <p class="bar-label"><span class="tabular">68 / 75</span> assembled &amp; tested</p>
-          <p>Once built and tested, houses are ready to leave our office within <b>5 business days</b>.</p>
-          <div class="milestone">Full fleet tested estimate &nbsp;<b class="tabular">w/c 12 Oct</b></div>
+          <p>All 75 houses are assembled and tested. The full fleet is built and out the door.</p>
+          <div class="bar" role="img" aria-label="75 of 75 houses assembled and tested"><i style="width:100%;background:var(--mint-deep)"></i></div>
+          <p class="bar-label"><span class="tabular">75 / 75</span> assembled &amp; tested</p>
         </div>
       </div>
     </article>
@@ -451,15 +449,15 @@
       <button class="stage__head" aria-expanded="false">
         <span class="stage__num tabular">06</span>
         <span class="stage__title"><h3>Quick Start Guide</h3><p>The booklet that ships inside every box</p></span>
-        <span class="pill track">90% done</span>
+        <span class="pill ready">Done</span>
         <svg class="stage__chev" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="stage__body">
         <div class="stage__body-in">
           <p>There's also an A4 one-pager version.</p>
-          <p>We're updating the full booklet as we go with the assembly run, to keep the information accurate and complete.</p>
-          <div class="bar" role="img" aria-label="Quick Start Guide 90 percent complete"><i style="width:90%;background:var(--mint-deep)"></i></div>
-          <p class="bar-label">90% done</p>
+          <p>The booklet was finalised alongside the assembly run and shipped inside all 75 boxes.</p>
+          <div class="bar" role="img" aria-label="Quick Start Guide complete"><i style="width:100%;background:var(--mint-deep)"></i></div>
+          <p class="bar-label">100% done</p>
         </div>
       </div>
     </article>
@@ -473,8 +471,8 @@
       </button>
       <div class="stage__body">
         <div class="stage__body-in">
-          <p>Six games are live in the preview build. Have a poke around. We're building toward 8 for launch, 10 if time allows.</p>
-          <p>Full platform goes live <b>mid-October</b>. Accessible from a URL. No app, no login for the kids.</p>
+          <p>Six games are live on the platform. Have a poke around. We're still building toward 8, 10 if time allows.</p>
+          <p>The full platform is <b>live</b>. Accessible from a URL. No app, no login for the kids.</p>
           <div class="stat-chips">
             <div class="stat-chip"><b>6</b>live now</div>
             <div class="stat-chip"><b>8</b>target</div>
@@ -492,20 +490,20 @@
   <div class="wrap">
     <p class="eyebrow">Shipping tracker</p>
     <h2>75 houses, two destinations</h2>
-    <p class="lede">The Morwell run has gone out. The Melbourne run is still to come.</p>
+    <p class="lede">Both runs have gone out. All 75 houses are delivered.</p>
 
     <div class="ship__grid">
       <div class="ship__card">
         <div class="ship__route"><span>Sydney</span><span class="ship__track"></span><span>Melbourne</span></div>
         <h3>Sian</h3>
-        <div class="ship__bar" role="img" aria-label="0 of 41 houses shipped to Sian"><i style="width:0%"></i></div>
-        <p class="ship__bar-label"><span class="tabular">0 / 41</span> shipped</p>
+        <div class="ship__bar" role="img" aria-label="41 of 41 houses shipped to Sian"><i style="width:100%;background:var(--mint-deep)"></i></div>
+        <p class="ship__bar-label"><span class="tabular">41 / 41</span> delivered</p>
       </div>
       <div class="ship__card">
         <div class="ship__route"><span>Sydney</span><span class="ship__track"></span><span>Morwell, VIC</span></div>
         <h3>Tierney</h3>
         <div class="ship__bar" role="img" aria-label="34 of 34 houses shipped to Tierney"><i style="width:100%;background:var(--mint-deep)"></i></div>
-        <p class="ship__bar-label"><span class="tabular">34 / 34</span> shipped</p>
+        <p class="ship__bar-label"><span class="tabular">34 / 34</span> delivered</p>
       </div>
     </div>
   </div>
@@ -534,7 +532,7 @@
       </a>
       <a class="res" href="https://glowhouse-cd.netlify.app/" target="_blank" rel="noopener">
         <span class="res__icon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 9h16" stroke="currentColor" stroke-width="1.8"/></svg></span>
-        <span class="res__text"><b>Mini-games preview</b><span>Live build, six games in so far</span></span>
+        <span class="res__text"><b>Mini-games platform</b><span>Live now, six games in so far</span></span>
         <span class="res__go">Open &rarr;</span>
       </a>
     </div>
@@ -554,7 +552,7 @@
 
 <footer>
   <div class="wrap">
-    <span>GLOW House &middot; a Children&rsquo;s Discovery &times; SEC build &middot; last updated 12 Oct 2026</span>
+    <span>GLOW House &middot; a Children&rsquo;s Discovery &times; SEC build &middot; last updated 3 Nov 2026</span>
   </div>
 </footer>
 
@@ -599,22 +597,6 @@
     });
   });
 
-// ---- Live day count to the "full fleet tested" milestone ----
-  try {
-    var target = new Date('2026-10-16T00:00:00');
-    var now = new Date();
-    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    // Count weekdays remaining, from tomorrow through the target day inclusive.
-    var days = 0;
-    var cursor = new Date(today);
-    while(cursor < target){
-      cursor.setDate(cursor.getDate() + 1);
-      var dow = cursor.getDay();
-      if(dow !== 0 && dow !== 6){ days++; }
-    }
-    var el = document.getElementById('statDays');
-    if(el){ el.textContent = (target <= today) ? '✓' : days; }
-  } catch(e) {}
 
   // ---- Gantt timeline: data-driven so dates are easy to update later ----
   var RANGE_START = new Date('2026-08-24T00:00:00');
@@ -631,11 +613,11 @@
     { id: 'row-print',  label: '3D Printing',        start: '2026-08-24', end: '2026-09-11', status: 'ready' },
     { id: 'row-source', label: 'Component Sourcing', start: '2026-08-24', end: '2026-09-11', status: 'ready' },
     { id: 'row-elec',   label: 'Electronics',        start: '2026-09-01', end: '2026-09-17', status: 'ready' },
-    { id: 'row-asm',    label: 'Assembly & Testing', start: '2026-09-13', end: '2026-10-16', status: 'track' },
+    { id: 'row-asm',    label: 'Assembly & Testing', start: '2026-09-13', end: '2026-10-16', status: 'ready' },
     { id: 'row-fw',     label: 'Firmware update',    start: '2026-08-24', end: '2026-09-12', status: 'ready' },
-    { id: 'row-guide',  label: 'Quick Start Guide',  start: '2026-08-24', end: '2026-09-20', status: 'track' },
+    { id: 'row-guide',  label: 'Quick Start Guide',  start: '2026-08-24', end: '2026-09-20', status: 'ready' },
     { id: 'row-games',  label: 'Mini Games',         start: '2026-08-24', end: '2026-10-15', status: 'track' },
-    { id: 'row-ship',   label: 'Shipping',           start: '2026-09-16', end: '2026-10-05', status: 'decide', tbc: true }
+    { id: 'row-ship',   label: 'Shipping',           start: '2026-09-16', end: '2026-10-05', status: 'ready' }
   ];
 
   var rowsEl = document.getElementById('ganttRows');
